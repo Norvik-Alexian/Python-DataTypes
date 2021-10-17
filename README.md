@@ -59,3 +59,12 @@ Generator is an iterator that you can only iterate once.
 Generator don't save values in memory they generate values on fly forgetting about previous value.
 
 Generators can be declared using () with the comprehension expression style. Generator is inherited from iterator.
+
+## Next() with generators:
+next() function (uses iterator __next__) can be used with generators to move to next item.
+
+## Generator Functions:
+Generator function is a function that returns generator. It uses yield keyword for each item return.
+Return operator return the control once to the calling part.
+Yield operator returns the control multiple times. It can return control as many times. It can return control as many time
+as it is used in function. Each control return can be organizzed with next()
