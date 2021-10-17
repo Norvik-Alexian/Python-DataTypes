@@ -23,7 +23,7 @@ print(message_substring)
 message_four = input('Enter the message: ')
 
 
-def task_four(message):
+def half_substring(message):
     message_half = len(message) // 2
 
     if len(message) % 2 == 0:
@@ -31,13 +31,13 @@ def task_four(message):
     else:
         print(message[message_half:])
 
-task_four(message_four)
+half_substring(message_four)
 
 # 5. Calculate number of ‘d’ chars in inputted string.
 message_five = input('Enter the message: ')
 
 
-def task_five(message):
+def char_searching(message):
     counter = 0
 
     for character in message:
@@ -45,26 +45,26 @@ def task_five(message):
             counter += 1
     return counter
 
-task_five(message_five)
+char_searching(message_five)
 
 
 # 6. Input string, find how many ‘ab’-s are inside.
 message_six = input('enter the text here: ')
 
 
-def task_six(message):
+def string_checkup(message):
     counter = 0
     for index in range(len(message) - 1):
         if message[index] == 'a' and message[index + 1] == 'b':
             counter += 1
     return counter
 
-task_six(message_six)
+string_checkup(message_six)
 
 # 7. Input string and replace all ‘1’ with ‘one'
 replaced_string = message_five.replace('1', 'one')
 
-# print(replaced_string)
+print(replaced_string)
 
 # 8. Define a string with values inside using format() method and print result.
 formatted_string = 'We are learning {0}'.format('python')
@@ -76,7 +76,7 @@ print(f'{formatted_string}\n{formatted_string_two}')
 message_nine = input('Enter the text here: ')
 
 
-def task_nine(message):
+def regex_checkup(message):
     message_pattern = r'^[a-zA-Z]+$'
     alphabet_only = re.match(message_pattern, message)
     if alphabet_only:
@@ -84,7 +84,7 @@ def task_nine(message):
     else:
         print('this is not containing only alphabets')
 
-task_nine(message_nine)
+regex_checkup(message_nine)
 
 # 10. Define a collection of numbers, generate a new collection selecting only odd or dividable by 6 numbers and print it
 numbers = [5, 6, 7, 8, 9, 10, 11, 12, 13]
@@ -96,7 +96,7 @@ print(numbers_checkup)
 # 11. Create a collection of 6 names inputted from console , generate a new collection selecting only the names starting from ‘A’ and print it
 
 
-def task_eleven():
+def specific_name_generator():
     inputted_names = []
     for name in range(6):
         names = input('enter the name: ')
@@ -105,6 +105,8 @@ def task_eleven():
         if selected_names:
             inputted_names.append(names)
     return inputted_names
+
+specific_name_generator()
 
 
 # 12. Define a collection of color names, generate a new collection selecting only color name having more than 1 ‘o’ and print it
@@ -119,21 +121,21 @@ print(colors_checkup)
 pets = {'shepard': 'Johny', 'cats': 'Pete', 'bulldog': 'Max', 'persian_cat': 'Johny'}
 
 
-def task_thirteen(dictionary_name):
+def pets_names(dictionary_name):
     counter = 0
     for name in dictionary_name:
         if dictionary_name[name] == 'Johny':
             counter += 1
     return counter
 
-task_thirteen(pets)
+pets_names(pets)
 
 # 14. Create a collection for storing hotel visitors (name, country), input several visitors from console,
 #print how many visitors are now in hotel, what is their country, what is their name.
 hotel = {'Norvik': 'Armenia', 'Mohammad': 'Iran', 'Max': 'USA', 'Andranik': 'Syria'}
 
 
-def task_fourteen(hotel):
+def hotel_visitors(hotel):
     for new_visitors in range(3):
         new_visitors_info = input('enter their name and their country using ":" to separate: ')
         visitors_names = new_visitors_info.split(':')[0]
@@ -142,13 +144,13 @@ def task_fourteen(hotel):
     hotel_info = f'Name of the visitors in hotel: {hotel.keys()}\nName of their countries {hotel.values()}\nAmount of visitors in the hotel {len(hotel)}'
     return hotel_info
 
-task_fourteen(hotel)
+hotel_visitors(hotel)
 
 # 15. Create a collection of students with their scores and input them from console, remove students with score less than 40 and print final collection.
 school = {'Norvik': 90, 'Mohammad': 87, 'Peter': 77, 'John': 35, 'Alex': 40}
 
 
-def task_fifteen(school):
+def school_students(school):
     for new_students in range(3):
         new_students_info = input('enter their name and their score using ":" to separate: ')
         students_name = new_students_info.split(':')[0]
@@ -157,40 +159,40 @@ def task_fifteen(school):
     scores = {i: school[i] for i in school if school[i] > 40}
     return scores
 
-task_fifteen(school)
+school_students(school)
 
 #16. Input string of words separated by coma, get number of words and print it
 message_sixteen = input('Enter the numbers separated by come: ')
 
 
-def task_sixteen(message):
+def word_counting(message):
     splitted_message = message.split(',')
     message_length = len(splitted_message)
     print(message_length)
 
-task_sixteen(message_sixteen)
+word_counting(message_sixteen)
 
 #17. Create a regular expression to find occurrences of regular expression in strings.
 text = 'Hello my name is Norvik and my last name is Alexian'
 
 
-def seventeen(text):
+def regular_expression(text):
     text_pattern = r'[A-Z]+'
     text_output = re.findall(text_pattern, text)
     text_length = len(text_output)
     print(text_length)
 
-seventeen(text)
+regular_expression(text)
 
 # 18. Define a string and get substring of even elements
 text_eighteen = 'This is a Python language'
 
 
-def task_eighteen(text):
+def even_substring(text):
     even_substring = text[1::2]
     print(even_substring)
 
-task_eighteen(text)
+even_substring(text)
 
 # 19. Create a collection of dates (date like ‘1/11/2018’ with weekday like ‘Monday’), print total number of date, dates for non-working days (Saturday, Sunday)
 dates = {'1/11/2018': 'Monday', '2/11/2018': 'Tuesday', '3/11/2018': 'Wednesday', '6/11/2018': 'Saturday', '7/11/2018': 'Sunday'}
@@ -218,6 +220,7 @@ def filenames_details(filenames):
     for files in filenames:
         file = re.match(file_pattern, files)
         extension = re.findall(extension_pattern, files)
+
         if file:
             print(files)
         if extension:
